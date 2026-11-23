@@ -77,6 +77,37 @@
         "lrc"
       ],
       "priority": 10
+    },
+    {
+      "id": "liriqo",
+      "name": "LiriQo",
+      "category": "lyrics",
+      "enabled": true,
+      "adapter": "liriqo",
+      "base_urls": [
+        "https://api.liriqo-alfarrizi.my.id/v1"
+      ],
+      "capabilities": [
+        "plain_lyrics",
+        "synced_lyrics",
+        "lrc",
+        "word_synced_lyrics"
+      ],
+      "priority": 5
+    },
+    {
+      "id": "lyrics_ovh",
+      "name": "Lyrics.ovh",
+      "category": "lyrics",
+      "enabled": true,
+      "adapter": "lyrics_ovh",
+      "base_urls": [
+        "https://api.lyrics.ovh"
+      ],
+      "capabilities": [
+        "plain_lyrics"
+      ],
+      "priority": 30
     }
   ],
   "provider_defaults": {
