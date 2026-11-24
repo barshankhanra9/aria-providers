@@ -102,7 +102,7 @@
         "synced_lyrics",
         "lrc"
       ],
-      "priority": 15
+      "priority": 20
     },
     {
       "id": "lrclib",
@@ -118,7 +118,7 @@
         "synced_lyrics",
         "lrc"
       ],
-      "priority": 20
+      "priority": 15
     }
   ],
   "metadata_cleaning": {
