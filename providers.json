@@ -31,11 +31,11 @@
       "enabled": true,
       "adapter": "piped",
       "base_urls": [
-        "https://kavin.rocks",
-        "https://adminforge.de",
-        "https://leptons.xyz",
-        "https://private.coffee",
-        "https://nosebs.ru"
+        "https://pipedapi.kavin.rocks",
+        "https://pipedapi.adminforge.de",
+        "https://pipedapi.leptons.xyz",
+        "https://api.piped.private.coffee",
+        "https://pipedapi.nosebs.ru"
       ],
       "capabilities": [
         "search",
@@ -51,10 +51,10 @@
       "enabled": true,
       "adapter": "invidious",
       "base_urls": [
-        "https://nadeko.net",
-        "https://nerdvpn.de",
-        "https://chocolatemoo53.com",
-        "https://tiekoetter.com"
+        "https://inv.nadeko.net",
+        "https://invidious.nerdvpn.de",
+        "https://yt.chocolatemoo53.com",
+        "https://invidious.tiekoetter.com"
       ],
       "capabilities": [
         "search",
@@ -70,7 +70,7 @@
       "enabled": true,
       "adapter": "liriqo",
       "base_urls": [
-        "https://liriqo-alfarrizi.my.id"
+        "https://api.liriqo-alfarrizi.my.id/v1"
       ],
       "capabilities": [
         "plain_lyrics",
