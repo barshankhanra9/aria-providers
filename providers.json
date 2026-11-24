@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "config_version": "1.0.0",
-  "updated_at": "2026-11-23",
+  "config_version": "1.1.0",
+  "updated_at": "2026-11-24",
   "description": "ARIA centralized provider registry. Provider URLs and capabilities are configurable; provider-specific adapters remain in the app.",
   "providers": [
     {
@@ -11,7 +11,8 @@
       "enabled": true,
       "adapter": "jiosaavn",
       "base_urls": [
-        "https://saavn.bycomsolutions.com/api"
+        "https://bycomsolutions.com",
+        "https://saavn.dev"
       ],
       "capabilities": [
         "search",
@@ -19,7 +20,8 @@
         "album",
         "artist",
         "playlist",
-        "stream_resolver"
+        "stream_resolver",
+        "lyrics"
       ],
       "priority": 10
     },
@@ -30,11 +32,11 @@
       "enabled": true,
       "adapter": "piped",
       "base_urls": [
-        "https://pipedapi.kavin.rocks",
-        "https://pipedapi.adminforge.de",
-        "https://pipedapi.leptons.xyz",
-        "https://api.piped.private.coffee",
-        "https://pipedapi.nosebs.ru"
+        "https://kavin.rocks",
+        "https://adminforge.de",
+        "https://leptons.xyz",
+        "https://private.coffee",
+        "https://nosebs.ru"
       ],
       "capabilities": [
         "search",
@@ -50,10 +52,10 @@
       "enabled": true,
       "adapter": "invidious",
       "base_urls": [
-        "https://inv.nadeko.net",
-        "https://invidious.nerdvpn.de",
-        "https://yt.chocolatemoo53.com",
-        "https://invidious.tiekoetter.com"
+        "https://nadeko.net",
+        "https://nerdvpn.de",
+        "https://chocolatemoo53.com",
+        "https://tiekoetter.com"
       ],
       "capabilities": [
         "search",
@@ -61,6 +63,47 @@
         "stream_resolver"
       ],
       "priority": 30
+    },
+    {
+      "id": "liriqo",
+      "name": "LiriQo",
+      "category": "lyrics",
+      "enabled": true,
+      "adapter": "liriqo",
+      "base_urls": [
+        "https://liriqo-alfarrizi.my.id"
+      ],
+      "capabilities": [
+        "plain_lyrics",
+        "synced_lyrics",
+        "lrc",
+        "word_synced_lyrics"
+      ],
+      "priority": 5
+    },
+    {
+      "id": "musixmatch",
+      "name": "Musixmatch",
+      "category": "lyrics",
+      "enabled": true,
+      "adapter": "musixmatch",
+      "base_urls": [
+        "https://musixmatch.com"
+      ],
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Cookie": "x-mxm-token-guid="
+      },
+      "params": {
+        "app_id": "web-desktop-app-v1.0",
+        "format": "json"
+      },
+      "capabilities": [
+        "plain_lyrics",
+        "synced_lyrics",
+        "lrc"
+      ],
+      "priority": 15
     },
     {
       "id": "lrclib",
@@ -76,44 +119,18 @@
         "synced_lyrics",
         "lrc"
       ],
-      "priority": 10
-    },
-    {
-      "id": "liriqo",
-      "name": "LiriQo",
-      "category": "lyrics",
-      "enabled": true,
-      "adapter": "liriqo",
-      "base_urls": [
-        "https://api.liriqo-alfarrizi.my.id/v1"
-      ],
-      "capabilities": [
-        "plain_lyrics",
-        "synced_lyrics",
-        "lrc",
-        "word_synced_lyrics"
-      ],
-      "priority": 5
-    },
-    {
-      "id": "lyrics_ovh",
-      "name": "Lyrics.ovh",
-      "category": "lyrics",
-      "enabled": true,
-      "adapter": "lyrics_ovh",
-      "base_urls": [
-        "https://api.lyrics.ovh"
-      ],
-      "capabilities": [
-        "plain_lyrics"
-      ],
-      "priority": 30
+      "priority": 20
     }
   ],
+  "metadata_cleaning": {
+    "strip_brackets_regex": "\\(.*?\\)|\\[.*?]",
+    "strip_keywords_regex": "(?i)\\b(official|video|audio|lyrical|lyrics|full song|music video|4k|hd|remix|slowed|reverb)\\b",
+    "title_delimiters": ["|", "-", "//"]
+  },
   "provider_defaults": {
     "endpoint_failover": true,
     "max_retries_per_endpoint": 1,
-    "request_timeout_ms": 10000,
+    "request_timeout_ms": 4500,
     "health_check_cooldown_ms": 300000
   }
 }
