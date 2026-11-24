@@ -11,8 +11,7 @@
       "enabled": true,
       "adapter": "jiosaavn",
       "base_urls": [
-        "https://bycomsolutions.com",
-        "https://saavn.dev"
+        "https://saavn.bycomsolutions.com/api"
       ],
       "capabilities": [
         "search",
